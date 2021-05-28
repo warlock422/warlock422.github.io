@@ -1,0 +1,71 @@
+.btn-wrapper {
+  /* height: 3rem; */
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+  display: none;
+}
+.burger-btn {
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background-color: #333;
+}
+.btn-wrapper::after,
+.btn-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2.5rem;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s;
+}
+.btn-wrapper::after {
+  top: 0rem;
+}
+.btn-wrapper::before {
+  bottom: 0rem;
+}
+.btn-close span {
+  opacity: 0;
+}
+.btn-close::after {
+  transform: rotate(45deg);
+  top: 1rem;
+  transition: all 0.3s;
+}
+.btn-close::before {
+  transform: rotate(-45deg);
+  top: 1rem;
+  transition: all 0.3s;
+}
+
+@media (max-width: 800px) {
+  .menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #24272e; */
+    left: 0%;
+    top: -15rem;
+    z-index: 1000;
+    transition: top 0.5s;
+    color: white;
+  }
+  .menu a {
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .menu a:hover {
+    background-color: #333;
+    color: white;
+  }
+
+  .btn-wrapper {
+    display: block;
+  }
+}
